@@ -2,11 +2,12 @@ import React from 'react'
 
 interface Props {
     params: {slug : string[]};
+    searchParams: {sortOrder: string};
 }
 
-const ProductDetails = ({params: {slug}}: Props) => {
+const ProductDetails = ({params: {slug}, searchParams: {sortOrder}}: Props) => {
   return (
-    <div>ProductDetails {slug} </div>
+    <div>ProductDetails {slug} {sortOrder}</div>
   )
 }
 
