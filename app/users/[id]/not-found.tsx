@@ -6,7 +6,7 @@ const UserNotFound = () => {
         <div className='alert alert-error'>
 
         <h1>Oops!</h1>
-        <p>This User doesn't exist</p>
+        <p>This User doesn&apos;t exist</p>
         </div>
     </div>
   )
