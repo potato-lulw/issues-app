@@ -4,7 +4,7 @@ import React from 'react'
 const ProductCard = () => {
   return (
     <div>
-        <button onClick={()=>{console.log('hello')}}>Button</button>
+        <button className='btn btn-primary' onClick={()=>{console.log('hello')}}>Button</button>
     </div>
   )
 }
