@@ -14,12 +14,13 @@ datasource db {
 }
 
 model User {
-  id           Int      @id @default(autoincrement())
-  name         String
-  email        String   @unique
-  followers    Int      @default(0)
-  isActive     Boolean  @default(true)
-  registeredAt DateTime @default(now())
+  id             Int      @id @default(autoincrement())
+  name           String
+  email          String?  @unique
+  hashedPassword String?
+  followers      Int      @default(0)
+  isActive       Boolean  @default(true)
+  registeredAt   DateTime @default(now())
 }
 
 model Product {
