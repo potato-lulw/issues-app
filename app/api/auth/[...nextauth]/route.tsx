@@ -11,7 +11,7 @@ export const authOptions =
         CredentialsProvider({
             name: 'Credentials',
             credentials: {
-                email : {label: 'Email', type: 'email', placeholder: 'email'},
+                email : {label: 'Email', type: 'email', placeholder: 'xyz@abc.com'},
                 password : {label: 'Password', type: 'password', placeholder: 'Password'}
             },
             async authorize(credentials, req) {
@@ -22,9 +22,9 @@ export const authOptions =
                 });
 
                 if(!user) return null;
-                const passwordsMatched = await bcrypt.compare(credentials.password, user.hashedPassword!);
+                const passwordsMatched = await bcrypt.compare(credentials.password, user.hashedPassword || "");
 
-                return passwordsMatched? user : null; 
+                return passwordsMatched? user as any : null; 
             }
         }),
         GoogleProvider ({
